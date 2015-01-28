@@ -19,7 +19,7 @@
                 <string>testing</string>
             </array>
             <key>description</key>
-            <string>Kobo is an eBook reading platform and syncing service for the Chapters/Indigo Kobo eReader.</string>
+            <string>Kobo is an eBook reading platform and syncing service for the Chapters Indigo Kobo eReader.</string>
             <key>display_name</key>
             <string>Kobo</string>
             <key>name</key>
