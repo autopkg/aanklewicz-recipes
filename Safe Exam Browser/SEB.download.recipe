@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>seb-macosx</string>
+        <string>SafeExamBrowser</string>
         <key>SOURCEFORGE_FILE_PATTERN</key>
         <string>SafeExamBrowser-[0-9_\.]*\.dmg</string>
         <key>SOURCEFORGE_PROJECT_ID</key>
