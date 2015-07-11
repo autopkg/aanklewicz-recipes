@@ -13,7 +13,7 @@
         <key>SOURCEFORGE_FILE_PATTERN</key>
         <string>SafeExamBrowser-[0-9_\.]*\.dmg</string>
         <key>SOURCEFORGE_PROJECT_ID</key>
-        <string>3704033</string>
+        <string>233708</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
