@@ -19,7 +19,7 @@
                 <string>testing</string>
             </array>
             <key>category</key>
-            <string>Multimedia</key>
+            <string>Multimedia</string>
             <key>description</key>
             <string>A free live coding synth for everyone originally designed to support computing and music lessons within schools. Use code to compose and perform in classical and contemporary styles ranging from Canons to Dubstep.</string>
             <key>developer</key>
