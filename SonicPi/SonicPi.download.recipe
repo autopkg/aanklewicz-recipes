@@ -23,7 +23,9 @@
                 <key>url</key>
                 <string>http://sonic-pi.net/</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http://sonic-pi.net/files/releases/.*?/Sonic-Pi-for-Mac-.*?.dmg)</string>
+                <string>(files/releases/.*?/Sonic-Pi-for-Mac-.*?.dmg)</string>
+				<key>result_output_var_name</key>
+				<string>dmg</string>
             </dict>
         </dict>
         <dict>
