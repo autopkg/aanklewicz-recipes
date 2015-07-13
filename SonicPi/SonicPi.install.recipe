@@ -28,7 +28,7 @@
                 <array>
                     <dict>
                         <key>source_item</key>
-                        <string>SonicPi.app</string>
+                        <string>Sonic Pi.app</string>
                         <key>destination_path</key>
                         <string>/Applications/</string>
                     </dict>
