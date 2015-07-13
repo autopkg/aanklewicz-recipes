@@ -23,7 +23,7 @@
             <key>description</key>
             <string>A free live coding synth for everyone originally designed to support computing and music lessons within schools. Use code to compose and perform in classical and contemporary styles ranging from Canons to Dubstep.</string>
             <key>developer</key>
-            <string>Sam Aaron and the Sonic Pi Core Team</key>
+            <string>Sam Aaron and the Sonic Pi Core Team</string>
             <key>display_name</key>
             <string>SonicPi</string>
             <key>name</key>
