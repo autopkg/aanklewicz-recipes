@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://sonic-pi.net/</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http://sonic-pi.net/files/releases/.*?/Sonic-Pi-for-Mac-.*?.dmg)</string>
+                <string>(?P&lt;url&gt;files/releases/.*?/Sonic-Pi-for-Mac-.*?.dmg)</string>
             </dict>
         </dict>
         <dict>
