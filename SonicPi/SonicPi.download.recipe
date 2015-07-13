@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Download recipe for SonicPi</string>
     <key>Identifier</key>
-    <string>com.github.aanklewicz.download.SonicPi</string>
+    <string>com.github.aanklewicz.download.sonicpi</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
