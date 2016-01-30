@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>GameSalad</string>
         <key>SPARKLE_FEED_URL</key>
-        <string>http://gamesalad.com/download/studioUpdates</string>
+        <string>https://gamesalad.com/download/studioUpdates</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
