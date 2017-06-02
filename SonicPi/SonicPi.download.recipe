@@ -34,7 +34,7 @@
 				<key>url</key>
 				<string>%URL%%match%</string>
 				<key>filename</key>
-				<string>%NAME%</string>
+				<string>%NAME%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
