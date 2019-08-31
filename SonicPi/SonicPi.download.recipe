@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>SonicPi</string>
 		<key>URL</key>
-		<string>http://sonic-pi.net/</string>
+		<string>https://sonic-pi.net/</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.3.1</string>
