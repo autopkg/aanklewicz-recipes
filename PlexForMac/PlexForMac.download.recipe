@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the current release version of Plex Media Player</string>
 	<key>Identifier</key>
-	<string>io.github.aanklewicz.download.PlexForMac</string>
+	<string>com.github.aanklewicz.download.PlexForMac</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
