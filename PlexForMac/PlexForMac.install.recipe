@@ -6,7 +6,43 @@
     <string>Downloads latest Plex for Mac disk image and installs Plex.</string>
     <key>Identifier</key>
     <string>com.github.aanklewicz.install.PlexForMac</string>
-   <key>MinimumVersion</key>
+    <key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>PlexForMac</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(https://downloads.plex.tv/plex-desktop/[0-9\.]+-[a-z0-9]+/macos/Plex-[0-9\.]+-[a-z0-9]+-x86_64.dmg)</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
+				<key>url</key>
+				<string>https://plex.tv/api/downloads/6.json</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+    <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>ParentRecipe</key>
     <string>com.github.aanklewicz.download.PlexForMac</string>
