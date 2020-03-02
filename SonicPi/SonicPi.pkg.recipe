@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads latest SonicPi disk image and builds a package.</string>
+    <string>Downloads latest SonicPi zip and builds a package.</string>
     <key>Identifier</key>
     <string>com.github.aanklewicz.pkg.sonicpi</string>
     <key>Input</key>
@@ -17,7 +17,7 @@
     <array>
         <dict>
             <key>Processor</key>
-            <string>AppDmgVersioner</string>
+            <string>Versioner</string>
             <key>Arguments</key>
             <dict>
                 <key>dmg_path</key>
