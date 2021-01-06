@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>Kobo</string>
         <key>DOWNLOAD_URL</key>
-        <string>http://download.kobobooks.com/desktop/kobodesktop/kobosetup.dmg</string>
+        <string>https://download.kobobooks.com/desktop/kobodesktop/kobosetup.dmg</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
