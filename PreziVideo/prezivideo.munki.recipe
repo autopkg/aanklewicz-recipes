@@ -24,6 +24,7 @@
             <string>Prezi</string>
             <key>display_name</key>
             <string>Prezi Video Desktop</string>
+            <key>name</key>
     		<string>%NAME%</string>
     		<key>unattended_install</key>
             <true/>
