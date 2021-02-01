@@ -35,7 +35,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.aanklewicz.download.prezi</string>
+    <string>com.github.aanklewicz.download.prezivideo</string>
     <key>Process</key>
     <array>
         <dict>
