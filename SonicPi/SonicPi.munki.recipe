@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest SonicPi zip and imports into Munki.</string>
+    <string>Downloads the latest SonicPi and imports into Munki.
+
+For the SUPPORTED_ARCH variable use "x86_64" for Intel and "arm64" for Apple Silicon.</string>
     <key>Identifier</key>
     <string>com.github.aanklewicz.munki.sonicpi</string>
     <key>Input</key>
@@ -12,6 +14,8 @@
         <string>SonicPi</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps</string>
+        <key>SUPPORTED_ARCH</key>
+        <string></string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -28,6 +32,10 @@
             <string>SonicPi</string>
             <key>name</key>
             <string>%NAME%</string>
+            <key>supported_architectures</key>
+            <array>
+                <string>%SUPPORTED_ARCH%</string>
+            </array>
             <key>unattended_install</key>
             <true/>
         </dict>

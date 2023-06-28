@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download recipe for SonicPi</string>
+    <string>Download recipe for SonicPi
+
+For the ARCH_TYPE variable please use "Intel-Mac-x64" for Intel downloads and "Mac-arm64" for Apple Silicon downloads</string>
     <key>Identifier</key>
     <string>com.github.aanklewicz.download.sonicpi</string>
     <key>Input</key>
@@ -12,6 +14,8 @@
         <string>SonicPi</string>
         <key>URL</key>
         <string>https://sonic-pi.net/</string>
+        <key>ARCH_TYPE</key>
+        <string></string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.3.1</string>
@@ -25,7 +29,7 @@
                 <key>url</key>
                 <string>%URL%</string>
                 <key>re_pattern</key>
-                <string>(files/releases/.*?/Sonic-Pi-for-Mac-.*?.dmg)</string>
+                <string>(files/releases/v([0-9]+(\.[0-9]+)+)/Sonic-Pi-for-%ARCH_TYPE%-v([0-9]+(-[0-9]+)+)\.dmg)</string>
             </dict>
         </dict>
         <dict>
@@ -44,7 +48,7 @@
         <dict>
             <key>Processor</key>
             <string>CodeSignatureVerifier</string>
-        	<key>Arguments</key>
+            <key>Arguments</key>
             <dict>
                 <key>input_path</key>
                 <string>%pathname%/Sonic Pi.app</string>
