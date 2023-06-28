@@ -15,7 +15,7 @@ For the SUPPORTED_ARCH variable use "x86_64" for Intel and "arm64" for Apple Sil
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps</string>
         <key>SUPPORTED_ARCH</key>
-        <string>arm64</string>
+        <string></string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
