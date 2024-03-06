@@ -5,27 +5,27 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Managed App Schema Builder and imports it into Munki.</string>
+	<string>Downloads the latest version of snyk-cli and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.aanklewicz.munki.ManagedAppSchemaBuilder</string>
+	<string>com.github.aanklewicz.munki.snyk</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Managed App Schema Builder</string>
+		<string>snyk</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
-				<string>testing</string>
+				<string>Phase0</string>
 			</array>
 			<key>description</key>
-			<string>Creates JSON file that can be used to set application preferences</string>
+			<string>Installs the CLI tools for Snyk</string>
 			<key>developer</key>
-			<string>Leslie Helou</string>
+			<string>Snyk</string>
 			<key>display_name</key>
-			<string>Managed App Schema Builder</string>
+			<string>Snyk CLI</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -35,25 +35,14 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.aanklewicz.download.ManagedAppSchemaBuilder</string>
+	<string>com.github.aanklewicz.pkg.snyk-cli</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkg_path</key>
-				<string>%dmg_path%</string>
+				<string>%pkg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
