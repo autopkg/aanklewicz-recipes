@@ -8,8 +8,6 @@
     <string>com.github.aanklewicz.install.kobo</string>
     <key>Input</key>
     <dict>
-        <key>DOWNLOAD_URL</key>
-        <string>http://download.kobobooks.com/desktop/kobodesktop/kobosetup.dmg</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
