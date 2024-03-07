@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Description</key>
+        <string>Downloads the latest version of Genesys Cloud.</string>
+        <key>Identifier</key>
+        <string>com.github.aanklewicz.download.genesyscloud</string>
+        <key>Input</key>
+        <dict>
+            <key>NAME</key>
+            <string>GenesysCloud</string>
+            <key>SEARCH_URL</key>
+            <string>https://apps.mypurecloud.com/directory-mac/</string>
+        </dict>
+        <key>MinimumVersion</key>
+        <string>0.4.0</string>
+        <key>Process</key>
+        <array>
+            <dict>
+                <key>Processor</key>
+                <string>URLTextSearcher</string>
+                <key>Arguments</key>
+                <dict>
+                    <key>url</key>
+                    <string>%SEARCH_URL%</string>
+                    <key>re_pattern</key>
+                    <string>https:\/\/app\.mypurecloud\.com\/directory-mac\/build-assets\/\d+\.\d+\.\d+-?\d+\/genesys-cloud-mac-\d+\.\d+\.\d+\.dmg</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>Processor</key>
+                <string>URLDownloader</string>
+                <key>Arguments</key>
+                <dict>
+                    <key>url</key>
+                    <string>%match%</string>
+                    <key>filename</key>
+                    <string>%NAME%.dmg</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>Processor</key>
+                <string>EndOfCheckPhase</string>
+            </dict>
+        </array>
+    </dict>
+</plist>
