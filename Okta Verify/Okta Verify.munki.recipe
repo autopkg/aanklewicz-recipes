@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of DocuSign Edit and imports it into Munki.</string>
+	<string>Downloads the latest version of Okta Verify and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.aanklewicz.munki.DocuSignEdit</string>
+	<string>com.github.aanklewicz.munki.OktaVerify</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
