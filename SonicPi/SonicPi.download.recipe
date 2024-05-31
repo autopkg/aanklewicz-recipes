@@ -5,39 +5,49 @@
     <key>Description</key>
     <string>Download recipe for SonicPi
 
-For the ARCH_TYPE variable please use "Intel-Mac-x64" for Intel downloads and "Mac-arm64" for Apple Silicon downloads</string>
+For the ARCH_TYPE variable please use Intel-Mac-x64 for Intel downloads and Mac-arm64 for Apple Silicon downloads</string>
     <key>Identifier</key>
     <string>com.github.aanklewicz.download.sonicpi</string>
     <key>Input</key>
     <dict>
-        <key>NAME</key>
-        <string>SonicPi</string>
-        <key>URL</key>
-        <string>https://sonic-pi.net/</string>
         <key>ARCH_TYPE</key>
         <string></string>
+        <key>NAME</key>
+        <string>SonicPi</string>
+        <key>PRERELEASE</key>
+        <string></string>
+        <key>URL</key>
+        <string>https://sonic-pi.net/</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.3.1</string>
     <key>Process</key>
     <array>
         <dict>
+            <key>Comment</key>
+            <string>If the ARCH_TYPE does not equal a wanted value, stop the recipe.</string>
+            <key>Processor</key>
+            <string>StopProcessingIf</string>
+            <key>Arguments</key>
+            <dict>
+                <key>predicate</key>
+                <string>"%ARCH_TYPE%" != "Intel-Mac-x64" AND "%ARCH_TYPE%" != "Mac-arm64"</string>
+            </dict>
+        </dict>
+        <dict>
             <key>Processor</key>
             <string>URLTextSearcher</string>
             <key>Arguments</key>
             <dict>
-                <key>url</key>
-                <string>%URL%</string>
                 <key>re_pattern</key>
-                <string>(files/releases/v([0-9]+(\.[0-9]+)+)/Sonic-Pi-for-%ARCH_TYPE%-v([0-9]+(-[0-9]+)+)\.dmg)</string>
+                <string>\"(https://sonic-pi\.net/files/releases/.*?/Sonic-Pi-for-%ARCH_TYPE%-.*?.dmg)\"</string>
+                <key>result_output_var_name</key>
+                <string>url</string>
+                <key>url</key>
+                <string>https://github.com/sonic-pi-net/sonic-pi/releases/latest</string>
             </dict>
         </dict>
         <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%URL%%match%</string>
-            </dict>
             <key>Processor</key>
             <string>URLDownloader</string>
         </dict>
