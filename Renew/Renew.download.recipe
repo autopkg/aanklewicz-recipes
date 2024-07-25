@@ -20,6 +20,8 @@
 			<dict>
 				<key>github_repo</key>
 				<string>SecondSonConsulting/Renew</string>
+				<key>asset_regex</key>
+				<string>Renew_v\d+.\d+.*.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
