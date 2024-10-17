@@ -2,23 +2,43 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads latest SonicPi zip and builds a package.</string>
-    <key>Identifier</key>
-    <string>com.github.aanklewicz.pkg.sonicpi</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>SonicPi</string>
-    </dict>
-    <key>ParentRecipe</key>
-    <string>com.github.aanklewicz.download.sonicpi</string>
-    <key>Process</key>
-    <array>
-         <dict>
-            <key>Processor</key>
-            <string>AppPkgCreator</string>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Downloads latest Sonic Pi app and builds a package.
+
+For the ARCH_TYPE variable, please use Intel-Mac-x64 for Intel downloads and Mac-arm64 for Apple Silicon downloads.
+
+If you need both the Intel and Apple Silicon versions of the app, override the recipe once for each kind and
+change the value of NAME to include some reference to the architecture so that you can distinguish the packages 
+(e.g., set NAME to Sonic Pi Intel).</string>
+	<key>Identifier</key>
+	<string>com.github.aanklewicz.pkg.sonicpi</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Sonic Pi</string>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.aanklewicz.download.sonicpi</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>AppDmgVersioner</string>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>AppPkgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>
