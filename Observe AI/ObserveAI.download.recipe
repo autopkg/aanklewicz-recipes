@@ -25,7 +25,7 @@
                     <key>url</key>
                     <string>%SEARCH_URL%</string>
                     <key>re_pattern</key>
-                    <string>https:\/\/realtime-desktop\.s3\.us-east-2\.amazonaws\.com\/setup\/darwin\/arm64\/Observe.ai%20Agent%20Assist-\d+\.\d+\.\d+-arm64\.pkg</string>
+                    <string>https:\/\/realtime-desktop\.s3\.us-east-2\.amazonaws\.com\/setup\/darwin\/arm64\/Observe.ai\%20Agent\%20Assist-\d+\.\d+\.\d+-arm64\.pkg</string>
                 </dict>
             </dict>
             <dict>
