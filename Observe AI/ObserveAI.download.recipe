@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Description</key>
+        <string>Downloads the latest version of ObserveAI.</string>
+        <key>Identifier</key>
+        <string>com.github.aanklewicz.download.ObserveAI</string>
+        <key>Input</key>
+        <dict>
+            <key>NAME</key>
+            <string>Okra</string>
+            <key>SEARCH_URL</key>
+            <string>https://app.observe.ai/real-time-agent-assist</string>
+        </dict>
+        <key>MinimumVersion</key>
+        <string>0.4.0</string>
+        <key>Process</key>
+        <array>
+            <dict>
+                <key>Processor</key>
+                <string>URLTextSearcher</string>
+                <key>Arguments</key>
+                <dict>
+                    <key>url</key>
+                    <string>%SEARCH_URL%</string>
+                    <key>re_pattern</key>
+                    <string>https:\/\/realtime-desktop\.s3\.us-east-2\.amazonaws\.com\/setup\/darwin\/arm64\/Observe.ai%20Agent%20Assist-\d+\.\d+\.\d+-arm64\.pkg</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>Processor</key>
+                <string>URLDownloader</string>
+                <key>Arguments</key>
+                <dict>
+                    <key>url</key>
+                    <string>%match%</string>
+                    <key>filename</key>
+                    <string>%NAME%.pkg</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>Processor</key>
+                <string>EndOfCheckPhase</string>
+            </dict>
+            <dict>
+                <key>Arguments</key>
+                <dict>
+                    <key>expected_authority_names</key>
+                    <array>
+                        <string>Developer ID Installer: Z21 Labs, Inc. (377DKSV63J)</string>
+                        <string>Developer ID Certification Authority</string>
+                        <string>Apple Root CA</string>
+                    </array>
+                    <key>input_path</key>
+                    <string>%pathname%</string>
+                </dict>
+                <key>Processor</key>
+                <string>CodeSignatureVerifier</string>
+            </dict>
+        </array>
+    </dict>
+</plist>
