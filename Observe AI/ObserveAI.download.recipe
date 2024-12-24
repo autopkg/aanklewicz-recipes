@@ -9,9 +9,9 @@
         <key>Input</key>
         <dict>
             <key>NAME</key>
-            <string>Okra</string>
-            <key>SEARCH_URL</key>
-            <string>https://app.observe.ai/real-time-agent-assist</string>
+            <string>ObserveAI</string>
+            <key>ARCH</key>
+            <string>x86_64</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
@@ -19,13 +19,28 @@
         <array>
             <dict>
                 <key>Processor</key>
+                <string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+                <key>Arguments</key>
+                <dict>
+                    <key>input_string</key>
+                    <string>%ARCH%</string>
+                    <key>find</key>
+                    <string>x86_64</string>
+                    <key>replace</key>
+                    <string>x64</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>Processor</key>
                 <string>URLTextSearcher</string>
                 <key>Arguments</key>
                 <dict>
                     <key>url</key>
-                    <string>%SEARCH_URL%</string>
+                    <string>https://kong.observe.ai/dravity/external/apis/v2/download-page</string>
                     <key>re_pattern</key>
-                    <string>https:\/\/realtime-desktop\.s3\.us-east-2\.amazonaws\.com\/setup\/darwin\/arm64\/Observe.ai\%20Agent\%20Assist-\d+\.\d+\.\d+-arm64\.pkg</string>
+                    <string>"(https://realtime-desktop.s3.us-east-2.amazonaws.com/setup/darwin/%output_string%/Observe.ai%20Agent%20Assist-(?P&lt;version&gt;[\d\.]+)-%output_string%.pkg)"</string>
+                    <key>result_output_var_name</key>
+                    <string>url</string>
                 </dict>
             </dict>
             <dict>
@@ -33,10 +48,8 @@
                 <string>URLDownloader</string>
                 <key>Arguments</key>
                 <dict>
-                    <key>url</key>
-                    <string>%match%</string>
                     <key>filename</key>
-                    <string>%NAME%.pkg</string>
+                    <string>%NAME%-%version%-%ARCH%.pkg</string>
                 </dict>
             </dict>
             <dict>

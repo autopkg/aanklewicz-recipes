@@ -13,7 +13,7 @@
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>MacStadiumOrka</string>
+		<string>ObserveAI</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -30,6 +30,10 @@
 			<string>Observe.AI</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>supported_architectures</key>
+			<array>
+				<string>%ARCH%</string>
+			</array>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
