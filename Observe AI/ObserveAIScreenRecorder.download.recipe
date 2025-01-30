@@ -36,7 +36,7 @@
                 <key>Arguments</key>
                 <dict>
                     <key>url</key>
-                    <string>https://app.observe.ai/screenrecorder</string>
+                    <string>https://kong.observe.ai/v1/screen-recording/app-versions/latest-mac</string>
                     <key>re_pattern</key>
                     <string>"(https://agent-screen-recorder.s3.us-west-2.amazonaws.com/setup/darwin/%output_string%/Observe.AI%20Screen%20Recorder-(?P&lt;version&gt;[\d\.]+)-%output_string%.pkg)"</string>
                     <key>result_output_var_name</key>
