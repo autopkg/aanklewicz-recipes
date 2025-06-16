@@ -20,6 +20,8 @@
 			<array>
 				<string>testing</string>
 			</array>
+			<key>category</key>
+			<string>Productivity</string>
 			<key>description</key>
 			<string>ChatGPT is an AI-powered assistant that helps you with writing, brainstorming, coding, research, and more — right from your Mac. The native macOS app provides a fast, streamlined experience with easy access via the menu bar and system-wide shortcut. Employees can securely log in with their OpenAI account to access personalized AI assistance for day-to-day tasks, project support, and productivity enhancements.</string>
 			<key>developer</key>
