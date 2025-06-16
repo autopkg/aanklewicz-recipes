@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Icons for macOS is the easiest way to create customized app icons in PNG format for your company’s internal app store. No graphic skills needed.</string>
+			<string>ChatGPT is an AI-powered assistant that helps you with writing, brainstorming, coding, research, and more — right from your Mac. The native macOS app provides a fast, streamlined experience with easy access via the menu bar and system-wide shortcut. Employees can securely log in with their OpenAI account to access personalized AI assistance for day-to-day tasks, project support, and productivity enhancements.</string>
 			<key>developer</key>
 			<string>OpenAI</string>
 			<key>display_name</key>
