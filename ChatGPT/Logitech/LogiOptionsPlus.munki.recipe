@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Thanks wegotoeleven for creating the pkg recipe</string>
+	<key>Description</key>
+	<string>Downloads the latest version of LogiOptions+ and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.aanklewicz.munki.LogiOptionsPlus</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>LogiOptionsPlus</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Utilities</string>
+			<key>description</key>
+			<string>Logi Options+ is the next-generation customization app for Logitech mice and keyboards. It lets you configure button assignments, set up app-specific profiles, adjust tracking speed, and manage device settings like battery level and firmware updates. With an intuitive interface and support for the latest Logitech devices, Logi Options+ helps you personalize your workflow and get the most out of your Logitech peripherals.</string>
+			<key>developer</key>
+			<string>Logitech</string>
+			<key>display_name</key>
+			<string>Logi Options+</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.wegotoeleven-recipes.pkg.LogiOptionsPlus</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pkg_path%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
