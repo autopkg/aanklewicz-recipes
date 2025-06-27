@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Download recipe for SonicPi
 
-For the ARCH_TYPE variable please use Intel-Mac-x64 for Intel downloads and Mac-arm64 for Apple Silicon downloads</string>
+For the ARCH_TYPE variable please use Mac-x64 for Intel downloads and Mac-arm64 for Apple Silicon downloads</string>
     <key>Identifier</key>
     <string>com.github.aanklewicz.download.sonicpi</string>
     <key>Input</key>
@@ -31,7 +31,7 @@ For the ARCH_TYPE variable please use Intel-Mac-x64 for Intel downloads and Mac-
             <key>Arguments</key>
             <dict>
                 <key>predicate</key>
-                <string>"%ARCH_TYPE%" != "Intel-Mac-x64" AND "%ARCH_TYPE%" != "Mac-arm64"</string>
+                <string>"%ARCH_TYPE%" != "Mac-x64" AND "%ARCH_TYPE%" != "Mac-arm64"</string>
             </dict>
         </dict>
         <dict>
