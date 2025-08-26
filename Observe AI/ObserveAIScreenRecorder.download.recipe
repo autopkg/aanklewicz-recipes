@@ -11,7 +11,9 @@
             <key>NAME</key>
             <string>ObserveAIScreenRecorder</string>
             <key>ARCH</key>
-            <string>x86_64</string>
+            <string>x64</string>
+            <key>DOWNLOAD_JSON_URL</key>
+            <string>https://kong.observe.ai/v1/screen-recording/app-versions/latest-mac</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
@@ -19,28 +21,28 @@
         <array>
             <dict>
                 <key>Processor</key>
-                <string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
-                <key>Arguments</key>
-                <dict>
-                    <key>input_string</key>
-                    <string>%ARCH%</string>
-                    <key>find</key>
-                    <string>x86_64</string>
-                    <key>replace</key>
-                    <string>x64</string>
-                </dict>
-            </dict>
-            <dict>
-                <key>Processor</key>
                 <string>URLTextSearcher</string>
                 <key>Arguments</key>
                 <dict>
                     <key>url</key>
-                    <string>https://kong.observe.ai/v1/screen-recording/app-versions/latest-mac</string>
+                    <string>%DOWNLOAD_JSON_URL%</string>
                     <key>re_pattern</key>
-                    <string>"(https://agent-screen-recorder.s3.us-west-2.amazonaws.com/setup/darwin/%output_string%/Observe.AI%20Screen%20Recorder-(?P&lt;version&gt;[\d\.]+)-%output_string%.pkg)"</string>
+                    <string>%ARCH%_pkg_download_url"\s*:\s*"([^"]+\.pkg)</string>
                     <key>result_output_var_name</key>
-                    <string>url</string>
+                    <string>found_url</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>Processor</key>
+                <string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+                <key>Arguments</key>
+                <dict>
+                    <key>find</key>
+                    <string> </string>
+                    <key>input_string</key>
+                    <string>%found_url%</string>
+                    <key>replace</key>
+                    <string>%20</string>
                 </dict>
             </dict>
             <dict>
@@ -48,8 +50,30 @@
                 <string>URLDownloader</string>
                 <key>Arguments</key>
                 <dict>
+                    <key>url</key>
+                    <string>%output_string%</string>
                     <key>filename</key>
-                    <string>%NAME%-%version%-%ARCH%.pkg</string>
+                    <string>%NAME%-%ARCH%.pkg</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>Processor</key>
+                <string>com.github.grahampugh.recipes.commonprocessors/PkgInfoReader</string>
+                <key>Arguments</key>
+                <dict>
+                    <key>source_pkg</key>
+                    <string>%pathname%</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>Processor</key>
+                <string>PkgCopier</string>
+                <key>Arguments</key>
+                <dict>
+                    <key>source_pkg</key>
+                    <string>%pathname%</string>
+                    <key>pkg_path</key>
+                    <string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%-%ARCH%.pkg</string>
                 </dict>
             </dict>
             <dict>
