@@ -11,7 +11,7 @@
             <key>NAME</key>
             <string>Orka</string>
             <key>SEARCH_URL</key>
-            <string>https://orkadocs.macstadium.com/docs/downloads</string>
+            <string>https://support.macstadium.com/hc/en-us/articles/28347376278299-Tools-Integrations</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.4.0</string>
