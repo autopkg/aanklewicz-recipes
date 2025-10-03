@@ -14,27 +14,23 @@
             <string>https://support.macstadium.com/hc/en-us/articles/28347376278299-Tools-Integrations</string>
         </dict>
         <key>MinimumVersion</key>
-        <string>0.4.0</string>
+	    <string>1.0.0</string>
         <key>Process</key>
-        <array>
+        <array> 
             <dict>
-                <key>Processor</key>
-                <string>URLTextSearcher</string>
                 <key>Arguments</key>
                 <dict>
-                    <key>url</key>
-                    <string>%SEARCH_URL%</string>
-                    <key>re_pattern</key>
-                    <string>https:\/\/cli-builds-public\.s3\.eu-west-1\.amazonaws\.com\/official\/\d+\.\d+\.\d+\/orka\d+\/macos\/arm64\/orka\d+\.pkg</string>
+                    <key>cask_name</key>
+                    <string>orka3</string>
                 </dict>
+                <key>Processor</key>
+                <string>com.github.ahousseini-recipes.SharedProcessors/HomebrewCaskURL</string>
             </dict>
             <dict>
                 <key>Processor</key>
                 <string>URLDownloader</string>
                 <key>Arguments</key>
                 <dict>
-                    <key>url</key>
-                    <string>%match%</string>
                     <key>filename</key>
                     <string>%NAME%.pkg</string>
                 </dict>
