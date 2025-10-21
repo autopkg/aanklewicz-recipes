@@ -20,6 +20,8 @@
 			<array>
 				<string>testing</string>
 			</array>
+			<key>category</key>
+			<string>Web Browsers</string>
 			<key>description</key>
 			<string>Official OpenAI ChatGPT Desktop Application .</string>
 			<key>developer</key>
