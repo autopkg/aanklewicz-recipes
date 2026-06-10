@@ -31,7 +31,7 @@
 			<key>category</key>
 			<string>Utilities</string>
 			<key>description</key>
-			<string>Multi-language editor makes it easy to write quality code.</string>
+			<string>DocuSign Edit lets you modify CLM documents using applications installed on your computer, without downloading the files from DocuSign CLM.</string>
 			<key>developer</key>
 			<string>DocuSign</string>
 			<key>display_name</key>
