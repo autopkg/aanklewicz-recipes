@@ -1,0 +1,10 @@
+Description: Downloads the latest version of MacAck and builds a package.
+Identifier: com.github.aanklewicz.pkg.MacAck
+MinimumVersion: "2.3"
+ParentRecipe: com.github.aanklewicz.download.MacAck
+
+Input:
+  NAME: MacAck
+
+Process:
+- Processor: AppPkgCreator

@@ -1,0 +1,23 @@
+Description: Downloads the latest version of MacAck and imports it into Munki.
+Identifier: com.github.aanklewicz.munki.MacAck
+MinimumVersion: "2.3"
+ParentRecipe: com.github.aanklewicz.download.MacAck
+
+Input:
+  NAME: MacAck
+  MUNKI_REPO_SUBDIR: apps/%NAME%
+  pkginfo:
+    catalogs:
+    - testing
+    category: Information Technology
+    description: Audits a Munki repository stored in an S3 bucket. Indexes every pkgsinfo item and finds orphaned installer items in pkgs/ that no pkginfo references, so they can be cleaned up safely.
+    developer: Adam Anklewicz
+    display_name: MacAck
+    name: "%NAME%"
+    unattended_install: true
+
+Process:
+- Processor: MunkiImporter
+  Arguments:
+    pkg_path: "%pathname%"
+    repo_subdirectory: "%MUNKI_REPO_SUBDIR%"
