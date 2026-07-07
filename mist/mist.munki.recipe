@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and imports to Munki the latest version of Mist, a Mac utility that automatically downloads macOS Firmwares / Installers.
+
+Set the DERIVE_MIN_OS variable to a non-empty string to set the minimum_os_version via MunkiInstallsItemsCreator. This requires a minimum AutoPkg version of 2.7 please update if you're not already running it.
+
+Adopted from autopkg/zentral-recipes (com.github.zentralpro.munki.mist) with thanks to Zentral, who deprecated their recipe in 2026.</string>
+	<key>Identifier</key>
+	<string>com.github.aanklewicz.munki.mist</string>
+	<key>ParentRecipe</key>
+	<string>com.github.aanklewicz.download.mist</string>
+	<key>MinimumVersion</key>
+	<string>2.7</string>
+	<key>Input</key>
+	<dict>
+		<key>DERIVE_MIN_OS</key>
+		<string>YES</string>
+		<key>MUNKI_NAME</key>
+		<string>%NAME%</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>MUNKI_CATEGORY</key>
+		<string>Utilities</string>
+		<key>MUNKI_DEVELOPER</key>
+		<string>ninxsoft</string>
+		<key>DISPLAY_NAME</key>
+		<string>mist</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>%MUNKI_CATEGORY%</string>
+			<key>description</key>
+			<string>A Mac utility that automatically downloads macOS Firmwares / Installers.</string>
+			<key>developer</key>
+			<string>%MUNKI_DEVELOPER%</string>
+			<key>display_name</key>
+			<string>%DISPLAY_NAME%</string>
+			<key>name</key>
+			<string>%MUNKI_NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+			<key>uninstallable</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+				<key>flat_pkg_path</key>
+				<string>%pathname%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/payload</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked/Payload</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>faux_root</key>
+				<string>%RECIPE_CACHE_DIR%/payload</string>
+				<key>installs_item_paths</key>
+				<array>
+					<string>/Applications/Mist.app</string>
+				</array>
+				<key>derive_minimum_os_version</key>
+				<string>%DERIVE_MIN_OS%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiInstallsItemsCreator</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/unpacked/</string>
+					<string>%RECIPE_CACHE_DIR%/payload/</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+	</array>
+</dict>
+</plist>

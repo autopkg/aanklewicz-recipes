@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and imports to Munki the latest version of swiftDialog, an admin utility app for macOS 11+ written in SwiftUI that displays a popup dialog, displaying the content that you want to display to your users. The resulting package installs to '/Library/Application Support/Dialog/Dialog.app' and symlinks the CLI to '/usr/local/bin/dialog'.
+
+Uses com.github.smithjw.download.swiftDialog as the parent download recipe. Set INCLUDE_PRERELEASES to a non-empty string to include pre-releases.
+
+Munki recipe modeled on the deprecated autopkg/zentral-recipes swiftDialog recipe (com.github.zentralpro.munki.swiftDialog), with thanks to Zentral.</string>
+	<key>Identifier</key>
+	<string>com.github.aanklewicz.munki.swiftDialog</string>
+	<key>ParentRecipe</key>
+	<string>com.github.smithjw.download.swiftDialog</string>
+	<key>MinimumVersion</key>
+	<string>2.9</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_NAME</key>
+		<string>%NAME%</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>MUNKI_CATEGORY</key>
+		<string>Utilities</string>
+		<key>MUNKI_DEVELOPER</key>
+		<string>bartreardon</string>
+		<key>DISPLAY_NAME</key>
+		<string>swiftDialog</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>swiftDialog is an admin utility app for macOS 11+ written in SwiftUI that displays a popup dialog, displaying the content that you want to display to your users. Details: https://github.com/swiftDialog/swiftDialog</string>
+			<key>display_name</key>
+			<string>%DISPLAY_NAME%</string>
+			<key>name</key>
+			<string>%MUNKI_NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>category</key>
+			<string>%MUNKI_CATEGORY%</string>
+			<key>developer</key>
+			<string>%MUNKI_DEVELOPER%</string>
+		</dict>
+	</dict>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads, packages and installs the latest version of Proxyman.
+
+Adopted from autopkg/zentral-recipes (com.github.zentralpro.install.proxyman) with thanks to Zentral, who deprecated their recipe in 2026.</string>
+	<key>Identifier</key>
+	<string>com.github.aanklewicz.install.Proxyman</string>
+	<key>ParentRecipe</key>
+	<string>com.github.aanklewicz.pkg.Proxyman</string>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Input</key>
+	<dict/>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>Installer</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
