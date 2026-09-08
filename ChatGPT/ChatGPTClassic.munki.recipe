@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Thanks Rich for creating the pkg recipe</string>
+	<string>Thanks Adam for creating the pkg recipe. rtrouton's ChatGPT pkg recipe (formerly the parent here) was repointed upstream to the merged Codex/ChatGPT app on 2026-08-13, so it no longer builds ChatGPT Classic; mikestechshop-recipes' ChatGPTClassic pkg recipe still targets com.openai.chat.</string>
 	<key>Description</key>
 	<string>Downloads the latest version of ChatGPT Classic and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -37,7 +37,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rtrouton.pkg.ChatGPT</string>
+	<string>com.github.mikestechshop.pkg.ChatGPTClassic</string>
 	<key>Process</key>
 	<array>
 		<dict>
